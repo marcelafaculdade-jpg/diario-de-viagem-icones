@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap'); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #f5f7fb;
+  font-family: 'Inter', sans-serif;
+  color: #2c2c2c;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+main {
+  background: #ffffff;
+  margin: 40px auto;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 950px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+
+.header {
+  background: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+
+.subtitle {
+  text-align: center; 
+  opacity: 0.85;
+}
+
+
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+
+.menu a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+}
+
+
+
+.section {
+  padding: 40px 0;
+}
+
+
+
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+
+.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #3f51b5;
+  font-size: 30px;
+}
+
+
+/* Aqui usei um pouco mais da IA para saber como colocar margem nos textos.*/
+p, li {
+  line-height: 1.7;
+  margin-bottom: 12px;
+  text-align: justify;
+}
+
+
+
+.card {
+  background: #fafbff;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #3f51b5;
+}
+
+
+.btn {
+  display: block;
+  margin: 25px auto;
+  padding: 12px 24px;
+  background: #3f51b5;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+
+.btn:hover {
+  background: #2c3a8c;
+  transform: scale(1.04);
+}
+
+
+/* Tive auxilio da IA para fazer essa parte, a ideia era deixar o layout semelhante ao pinterest. */
+.grid {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+
+.grid img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+
+.grid img:hover {
+  transform: scale(1.04);
+}
+
+
+
+#dicas ul {
+  list-style: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+
+#dicas li:hover {
+  background: #eef1ff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+
+.link-cidade {
+  margin-top: 15px;
+  text-align: center;
+}
+
+
+.link-cidade a {
+  color: #3f51b5;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+
+.link-cidade a:hover {
+  text-decoration: underline;
+}
+
+
+.proxima {
+  background: #3f51b5;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.proxima .btn {
+  margin-top: 15px;
+  background: #6472c4
+ 
+}
+
+.footer {
+  background: #3f51b5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+@media (max-width: 600px) {
+  .grid {
+    column-count: 1;
+  }
+
+
+  .titulo {
+    font-size: 24px;
+
+
+  }
+
+
+}
+
+/* Tive apoio do W3 school porque queria passar o mouse e a fazer com que os textos e imagens ampliassem e ficar afrente das outras,
+com isso além do :hover, utilizei o z-index.*/
+
+.grid img {
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.grid img:hover {
+  transform: scale(1.2); /* mais forte agora */
+  z-index: 999;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  z-index: 2;
+  position: relative;
+}
+#dicas.card:hover {
+  transform: none;
+  box-shadow: none;
+}
+/* Check na dica */
+.dica-check {
+    color: #28a745 !important; 
+    text-decoration: line-through; 
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+#toggle-theme {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+#toggle-theme:hover {
+    transform: scale(1.2);
+}
+
+/* EFEITO INSTA */
+.img-focada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.img-focada img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+/* MODO NOTURNO */
+
+body.dark-mode-active {
+    background-color: #1a1a1a !important;
+    color: #f5f5f5 !important;
+}
+
+.dark-mode-active main {
+    background-color: #2d2d2d !important;
+    color: #f5f5f5 !important;
+}
+
+.dark-mode-active .card {
+    background-color: #333 !important;
+    color: #eee !important;
+    border-left: 4px solid #7986cb !important;
+}
+
+.dark-mode-active p, .dark-mode-active h2, .dark-mode-active li {
+    color: #ddd !important;
+}
+/* ANIMAÇÃO PULSAR (para Dicas) */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.icon-pulse {
+  animation: pulse 1.2s infinite;
+}
+
+/* ANIMAÇÃO GIRAR (para Saída) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.icon-spin {
+  animation: spin 2s linear infinite;
+}
+
+
+
+
+/* Ícones base */
+.material-symbols-outlined {
+  vertical-align: middle;
+  margin-right: 6px;
+  transition: 0.3s;
+}
+
+/* Menu anima leve */
+.menu a:hover .material-symbols-outlined {
+  transform: scale(1.2);
+}
+
+/* Alinhamento dicas */
+#dicas li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* FLOAT */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.icon-float {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* SHAKE */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+.icon-shake:hover {
+  animation: shake 0.3s;
+}
+
+/* PULSE */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.icon-pulse {
+  animation: pulse 1.2s infinite;
+}
+
+/* SPIN */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.icon-spin {
+  animation: spin 2s linear infinite;
+}
